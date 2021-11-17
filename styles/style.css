@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Ubuntu:wght@300&display=swap');
+
+:root{
+    --primary-color: #f2f2f2;
+    --secondary-color: #333333;
+    --text-color: #555555;
+    --iconic-color: #ff4d4d;
+    --text-font: 'Ubuntu', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-color);
+}
+
+/* setting up the container grid */
+.container-grid{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 3fr;
+}
+
+/* side bar menu */
+.sidebar{
+    background-color: var(--primary-color);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+.sidebar h2{
+    font-size: 40px;
+    font-weight: bolder;
+    color: var(--secondary-color);
+}
+.sidebar .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar .list-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar ul li{
+    list-style-type: none;
+    font-family: var(--text-font);
+    padding: 10px;
+    margin: 15px 0;
+    color: var(--text-color);
+}
+.sidebar ul li:first-child{
+    text-decoration: line-through solid var(--iconic-color) 2px;
+}
+.sidebar .order-place{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.order-place button{
+    border: none;
+    outline: none;
+    padding: 12px 50px;
+    font-family: var(--text-font);
+    background-color: var(--iconic-color);
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+/* main content grid */
+.main-content{
+    width: 100%;
+    display: grid;
+}
+
+/* the header section */
+.heading{
+    background-color: var(--primary-color);
+    grid-column: 1/3;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading h1{
+    color: var(--secondary-color);
+    font-size: 70px;
+    font-weight: bolder;
+}
+/* the sub content section */
+.sub-content{
+    background-color: var(--primary-color);
+    grid-column: 3/3;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paragraph-container {
+    width: 60%;
+}
+.paragraph-container p{
+    font-family: var(--text-font);
+    color: var(--text-color);
+    line-height: 1.5rem;
+}
+.paragraph-container .line{
+    width: 70px;
+    height: 3px;
+    margin-top: 20px;
+    background-color: var(--iconic-color);
+}
+/* the menu items */
+.menu-items{
+    background-color: var(--primary-color);
+    grid-column: 1/4;
+    padding: 15px;
+}
+.menu-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.menu-item {
+    float: left;
+    padding: 10px;
+    background-color: var(--primary-color);
+    margin: 10px;
+    height: 220px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+}
+.menu-item img{
+    height: 120px;
+    width: 120px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+.menu-item h3{
+    font-weight: bolder;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    font-family: var(--text-font);
+    font-size: 16px;
+}
+.sidebar .menu-icon{
+    display: none;
+}
+.sidebar .cart-icon{
+    display: none;
+}
+.fas{
+    color: var(--iconic-color);
+    font-size: 28px;
+}
+@media screen and (max-width: 640px){
+    .container-grid{
+        grid-template-columns: 1fr;
+    }
+    .heading{
+        grid-column: 1/3;
+        justify-content: start;
+    }
+    .heading h1{
+        font-size: 40px;
+        padding: 20px;
+    }
+    .menu-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .menu-items{
+        grid-row: 2/ span 2;
+        grid-column: 1/3;
+    }
+    .menu-item{
+        background-color: #fff;
+    }
+    .sub-content{
+        grid-column: 1/3;
+        padding: 40px 0 80px 0;
+    }
+    .paragraph-container{
+        width: 80%;
+        font-size: 18px;
+    }
+    .sidebar{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        padding: 20px 0;
+    }
+    .sidebar h2{
+        font-size: 30px;
+    }
+    .sidebar .list-item{
+        display: none;
+    }
+    .sidebar .order-place{
+        display: none;
+    }
+    .sidebar .menu-icon{
+        display: block;
+        position: absolute;
+        left: 0;
+        padding: 20px 30px;
+    }
+    .sidebar .cart-icon{
+        display: block;
+        position: absolute;
+        right: 0;
+        padding: 20px 30px;
+    }
+}
